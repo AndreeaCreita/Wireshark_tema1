@@ -1,0 +1,49 @@
+
+1. Care este adresa de IP cerută de clientul DHCP?
+In wireshark, search dhcp, pentru DHCP Request la info:
+-Requested IP Address: 192.168.20.11
+-Host Name: Microknoppix
+
+Pentru DHCP NAK -> IP: 192.168.30.1
+
+
+2. Care este adresa de IPv6 a serverului de NTP?
+Search ipv6, scroll pana la NTP (client si server) 
+-> server Source: 2003:51:6012:110::dcf7:123
+
+
+3. Care este numele serverului autoritar (authoritative name server) pentru
+domeniul care este căutat?
+search dns Scroll la Authoritative nameservers
+query 242 are response in 243-> pt numele Name: blog.webernetz.net
+			         raspunsul Name Server: ns2.hans.hosteurope.de
+				           Name Server: ns1.hans.hosteurope.de
+				           
+query 2619 are response in 2620 -> pt Name: webernetz.net
+					   Name Server: ns1.hans.hosteurope.de
+                                          Name Server: ns2.hans.hosteurope.de
+                                      
+query 3506 are response in 3507 -> pt Name: webernetz.net
+					Name Server: ns1.hans.hosteurope.de
+					Name Server: ns2.hans.hosteurope.de
+
+query 3636 are response in 3637 -> ptName: webernetz.net
+					Name Server: ns1.hans.hosteurope.de
+					Name Server: ns2.hans.hosteurope.de
+					
+					
+4. Care este portul pentru protocolul CDP al host-ului CCNP-LAB-S2?
+Filter -> cdp si scroll pana la port id
+Port ID: GigabitEthernet0/2
+
+5. Ce versiune de IOS rulează pe host-ul CCNP-LAB-S2?
+filter -> cdp + scroll pana la software version
+Software version: IOS (tm) C2950 Software (C2950-I6K2L2Q4-M), Version 12.1(22)EA14, RELEASE SOFTWARE (fc1)
+
+6. Cand a fost config-ul de NVRAM actualizat ultima dată?
+
+Search nvram in packet bytes -> last config 21:02:36 UTC Fri Mar 3 2017 by weberjoh
+
+
+
+
